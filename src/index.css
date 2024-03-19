@@ -1,0 +1,5 @@
+/* Remove all the codes which is there after installation and add the below three lines of codes */
+/* these should be added on using of tailwindcss  */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
