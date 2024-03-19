@@ -50,3 +50,6 @@ npm install @reduxjs/toolkit
 <!-- run this command at last it will create a folder named dist it will be helpfull for netlify hoisting,
 only required files will be moved to the folder and we can drag that folder and paste it on hoisting and it will take less duration to load it -->
 npm run build
+
+<!-- for testing -->
+npm install --save-dev @testing-library/react
