@@ -40,13 +40,13 @@ const SignInForm = () => {
   const { formFields, setFormFields } = useState(defaultFormFields);
   const { email, password } = formFields;
 
-  const submitHandler = async (e) => {
-    e.preventDefault();
-  };
+  // const submitHandler = async (e) => {
+  //   e.preventDefault();
+  // };
 };
 
 const Auth = () => {
-  // toggle state form signin and signup
+  // toggle state for signin and signup
   const [activeTab, setActiveTab] = useState("sign-up");
 
   const dispatch = useDispatch();
@@ -107,7 +107,12 @@ const Auth = () => {
       if (error.code === "auth/email-already-in-use") {
         console.log(error);
         alert("The email address is already in use. Please sign in or use a different email.");
-      } else 
+      } 
+      else if(error.code === "auth/weak-password"){
+        console.error("Error occurred while signing up:", error);
+        alert("password should be strong and it should be more than 6 characters.");
+      }
+      else
         {
         console.error("Error occurred while signing up:", error);
         alert("Error occurred while signing up. Please try again.");

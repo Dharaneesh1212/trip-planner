@@ -39,25 +39,55 @@ const PlanTrip = () => {
 
   // function for creating a trip
   const planTrip = () => {
-    const { destination, startDate, endDate, activities } = planningTrip;
+    try {
+      const { destination, startDate, endDate, activities } = planningTrip;
     if (destination && startDate && endDate && activities.length > 0) {
       const newId = Date.now();
       const newData = { ...planningTrip, id: newId };
       dispatch(planIt(newData));
-      setPlanningTrip({
-        destination: "",
-        startDate: "",
-        endDate: "",
-        activities: [],
-      });
+      if (startDate > endDate){
+        setPlanningTrip({
+          destination: "",
+          startDate: "",
+          endDate: "",
+          activities: [],
+        });
+        console.log(error);
+      }
       navigate("/mytrip");
       // console.log(newData);
-    } else {
-      alert("Please fill out all fields and select atleast one activities.");
     }
+    } catch (error) {
+      if(error){
+      alert("start date is later than end date")
+      }
+      else {
+        alert("Please fill out all fields and select atleast one activities.");
+      }
+    }
+
+      // console.log(planningTrip);
+
+
+    // const { destination, startDate, endDate, activities } = planningTrip;
+    // if (destination && startDate && endDate && activities.length > 0) {
+    //   const newId = Date.now();
+    //   const newData = { ...planningTrip, id: newId };
+    //   dispatch(planIt(newData));
+    //   setPlanningTrip({
+    //     destination: "",
+    //     startDate: "",
+    //     endDate: "",
+    //     activities: [],
+    //   });
+    //   navigate("/mytrip");
+    //   console.log(newData);
+    // }else {
+    //   alert("Please fill out all fields and select atleast one activities.");
+    // }
+   
   };
 
-  // console.log(planTrip);
   // console.log(planningTrip);
 
   return (
