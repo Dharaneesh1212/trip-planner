@@ -20,10 +20,10 @@ const deleteIt = (id) => {
   };
 };
 
-const editIt = (id) => {
+const editIt = (trip) => {
   return {
     type: EDITIT,
-    payload: id,
+    payload: trip,
   };
 };
 

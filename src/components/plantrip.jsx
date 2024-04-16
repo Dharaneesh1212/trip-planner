@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { planIt } from "../app/reducer";
+import { planIt, editIt } from "../app/reducer";
 import { useNavigate, useLocation } from "react-router";
 
 const PlanTrip = () => {
-  const data = useSelector((state) => state.data);
+  const data = useSelector((state) => state.planning.data);
   const dispatch = useDispatch();
   const location = useLocation();
   const size = data.length;
@@ -54,28 +54,30 @@ const PlanTrip = () => {
     try {
       const { destination, startDate, endDate, activities } = planningTrip;
       if (destination && startDate && endDate && activities.length > 0) {
-        const newId = Date.now();
-        const newData = { ...planningTrip, id: newId };
-        dispatch(planIt(newData));
         if (startDate > endDate) {
-          setPlanningTrip({
-            destination: "",
-            startDate: "",
-            endDate: "",
-            activities: [],
-          });
-          console.log(error);
+          alert("Start date cannot be later than end date.");
+          return;
+        }
+
+        if (location.state && location.state.editData) {
+          const editedTrip = { ...planningTrip };
+          dispatch(editIt(editedTrip));
+        } else {
+          const newId = Date.now();
+          const newData = { ...planningTrip, id: newId };
+          dispatch(planIt(newData));
         }
         navigate("/mytrip");
-        // console.log(newData);
       } else {
         alert("Please fill out all fields and select at least one activity.");
       }
     } catch (error) {
       if (error) {
-        alert("start date is later than end date");
+        alert("An error occurred. Please try again.");
+        console.log(error);
       } else {
-        alert("Please fill out all fields and select atleast one activities.");
+        alert("Please fill out all fields and select at least one activity.");
+        console.log(error);
       }
     }
 
