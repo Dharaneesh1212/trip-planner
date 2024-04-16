@@ -5,6 +5,7 @@ import { useNavigate } from "react-router";
 const MyTrip = () => {
 // navigate to pages
   const navigate = useNavigate()
+  const dispatch = useDispatch();
 
   // edit function
   const editTrip = (trip) => {
@@ -18,7 +19,6 @@ const MyTrip = () => {
   };
 
   const plannedTrip = useSelector((state) => state.planning.data);
-  const dispatch = useDispatch();
   console.log(plannedTrip);
 
   return (

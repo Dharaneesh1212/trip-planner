@@ -7,21 +7,24 @@ const initialState = {
 const planningReducer = (state = initialState, action) => {
   switch (action.type) {
     case PLANIT:
-      const newData = [...state.data];
-      newData.push(action.payload);
-      return { data: newData };
+      return {
+        ...state,
+        data: [...state.data, action.payload],
+      };
 
     case DELETEIT:
-      const filteredDataDelete = state.data.filter(
-        (d) => d.id !== action.payload
-      );
-      return { data: filteredDataDelete };
+      return {
+        ...state,
+        data: state.data.filter((d) => d.id !== action.payload),
+      };
 
     case EDITIT:
-      const filteredDataEdit = state.data.filter(
-        (d) => d.id !== action.payload
-      );
-      return { data: filteredDataEdit };
+      return {
+        ...state,
+        data: state.data.map((trip) =>
+          trip.id === action.payload.id ? action.payload : trip
+        ),
+      };
 
     default:
       return state;

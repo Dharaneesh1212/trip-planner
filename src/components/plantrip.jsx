@@ -1,15 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { planIt } from "../app/reducer";
-import { useNavigate } from "react-router";
+import { useNavigate, useLocation } from "react-router";
 
 const PlanTrip = () => {
   const data = useSelector((state) => state.data);
   const dispatch = useDispatch();
+  const location = useLocation();
   const size = data.length;
 
   // after clicking on plan it button on this page user is directly navigated to the my trip page
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const [planningTrip, setPlanningTrip] = useState({
     destination: "",
@@ -18,9 +19,20 @@ const PlanTrip = () => {
     activities: [],
   });
 
+  useEffect(() => {
+    if (location.state && location.state.editData) {
+      setPlanningTrip(location.state.editData);
+    }
+  }, [location.state]);
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    const newTrip = type === "checkbox" ? checked ? e.target.nextSibling.textContent : "" : value;
+    const newTrip =
+      type === "checkbox"
+        ? checked
+          ? e.target.nextSibling.textContent
+          : ""
+        : value;
     setPlanningTrip((prevState) => ({
       ...prevState,
       [name]: newTrip,
@@ -41,54 +53,34 @@ const PlanTrip = () => {
   const planTrip = () => {
     try {
       const { destination, startDate, endDate, activities } = planningTrip;
-    if (destination && startDate && endDate && activities.length > 0) {
-      const newId = Date.now();
-      const newData = { ...planningTrip, id: newId };
-      dispatch(planIt(newData));
-      if (startDate > endDate){
-        setPlanningTrip({
-          destination: "",
-          startDate: "",
-          endDate: "",
-          activities: [],
-        });
-        console.log(error);
+      if (destination && startDate && endDate && activities.length > 0) {
+        const newId = Date.now();
+        const newData = { ...planningTrip, id: newId };
+        dispatch(planIt(newData));
+        if (startDate > endDate) {
+          setPlanningTrip({
+            destination: "",
+            startDate: "",
+            endDate: "",
+            activities: [],
+          });
+          console.log(error);
+        }
+        navigate("/mytrip");
+        // console.log(newData);
+      } else {
+        alert("Please fill out all fields and select at least one activity.");
       }
-      navigate("/mytrip");
-      // console.log(newData);
-    }
     } catch (error) {
-      if(error){
-      alert("start date is later than end date")
-      }
-      else {
+      if (error) {
+        alert("start date is later than end date");
+      } else {
         alert("Please fill out all fields and select atleast one activities.");
       }
     }
 
-      // console.log(planningTrip);
-
-
-    // const { destination, startDate, endDate, activities } = planningTrip;
-    // if (destination && startDate && endDate && activities.length > 0) {
-    //   const newId = Date.now();
-    //   const newData = { ...planningTrip, id: newId };
-    //   dispatch(planIt(newData));
-    //   setPlanningTrip({
-    //     destination: "",
-    //     startDate: "",
-    //     endDate: "",
-    //     activities: [],
-    //   });
-    //   navigate("/mytrip");
-    //   console.log(newData);
-    // }else {
-    //   alert("Please fill out all fields and select atleast one activities.");
-    // }
-   
+    // console.log(planningTrip);
   };
-
-  // console.log(planningTrip);
 
   return (
     <main className="flex items-center justify-center h-full w-full">
@@ -112,6 +104,7 @@ const PlanTrip = () => {
                 className="capitalize outline-none w-full p-4 text-lg animate__animated animate__zoomIn"
                 name="destination"
                 id="destination"
+                value={planningTrip.destination}
               >
                 <option value="">select</option>
                 <option>Tamil Nadu, kodaikanal</option>
@@ -151,6 +144,7 @@ const PlanTrip = () => {
                   name="startDate"
                   className="outline-none w-full p-4 text-lg animate__animated animate__zoomIn"
                   type="date"
+                  value={planningTrip.startDate}
                 />
               </span>
             </div>
@@ -166,6 +160,7 @@ const PlanTrip = () => {
                   name="endDate"
                   className="outline-none w-full p-4 text-lg animate__animated animate__zoomIn"
                   type="date"
+                  value={planningTrip.endDate}
                 />
               </span>
             </div>
