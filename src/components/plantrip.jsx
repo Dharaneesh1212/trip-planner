@@ -109,29 +109,29 @@ const PlanTrip = () => {
                 value={planningTrip.destination}
               >
                 <option value="">select</option>
-                <option>Tamil Nadu, kodaikanal</option>
-                <option>Tamil Nadu, ooty</option>
-                <option>Tamil Nadu, hogenakkal</option>
-                <option>Tamil Nadu, coonoor</option>
-                <option>Tamil Nadu, kolli hills</option>
-                <option>Tamil Nadu, yercaud</option>
-                <option>Tamil Nadu, valparai</option>
-                <option>Kerala, munnar</option>
-                <option>Kerala, keralamkundu</option>
-                <option>Kerala, alleppey</option>
-                <option>Kerala, athirapilly</option>
-                <option>Kerala, varkala</option>
-                <option>Karnataka, chikmagalur</option>
-                <option>Karnataka, coorg</option>
-                <option>Karnataka, hampi</option>
-                <option>Karnataka, dandeli</option>
-                <option>Karnataka, sakleshpura</option>
-                <option>Goa, jalvane falls</option>
-                <option>Maharashtra, lonavala</option>
-                <option>Maharashtra, mahabaleshwar</option>
-                <option>Maharashtra, igtapuri</option>
-                <option>Maharashtra, rajmachi</option>
-                <option>Maharashtra, malshej ghat</option>
+                <option>kodaikanal, Tamil Nadu</option>
+                <option>ooty,Tamil Nadu</option>
+                <option>hogenakkal,Tamil Nadu</option>
+                <option>coonoor,Tamil Nadu</option>
+                <option>kolli hills,Tamil Nadu</option>
+                <option>yercaud,Tamil Nadu</option>
+                <option>valparai,Tamil Nadu</option>
+                <option>munnar,Kerala</option>
+                <option>Keralamkundu,Kerala</option>
+                <option>alleppey,Kerala</option>
+                <option>athirapilly,Kerala</option>
+                <option>varkala,Kerala</option>
+                <option>chikmagalur,Karnataka</option>
+                <option>coorg,Karnataka</option>
+                <option>hampi,Karnataka</option>
+                <option>dandeli,Karnataka</option>
+                <option>sakleshpura,Karnataka</option>
+                <option>jalvane falls,Goa</option>
+                <option>lonavala,Maharashtra</option>
+                <option>mahabaleshwar,Maharashtra</option>
+                <option>igtapuri,Maharashtra</option>
+                <option>rajmachi,Maharashtra</option>
+                <option>malshej ghat,Maharashtra</option>
               </select>
             </div>
             {/*start Date */}
