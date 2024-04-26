@@ -6,7 +6,6 @@
   }
 }
 
-
 /* Tablet responsive */
 @media (min-width: 375px) and (max-width: 768px) {
   /*first text in the image */
@@ -66,14 +65,13 @@
   }
 }
 
-
 /* Mobile responsive */
 @media (min-width: 375px) and (max-width: 425px) {
-  /*first text in the image */
-  body{
+  body {
     background-color: white;
     color: black;
   }
+  /*first text in the image */
   #headone {
     position: relative;
     bottom: 13rem;
@@ -139,9 +137,9 @@
     width: 10rem;
   }
   /* navbar */
-  #navbar{
+  #navbar {
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: space-between;
     width: 100vw;
   }
@@ -155,8 +153,8 @@
     width: fit-content;
   }
   /* navbar font */
-  #navbar-content li{
-    font-size: .7rem;
+  #navbar-content li {
+    font-size: 0.7rem;
     margin: -1rem;
     display: flex;
     justify-content: center;
@@ -164,13 +162,13 @@
     flex-direction: column;
   }
   /* plantrip container */
-  #plansub{
+  #plansub {
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  #auth{
+  #auth {
     display: flex;
     align-items: center;
     justify-content: center;

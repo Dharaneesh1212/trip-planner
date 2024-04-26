@@ -103,7 +103,7 @@ const PlanTrip = () => {
               <select
                 onChange={(e) => handleChange(e)}
                 required
-                className="capitalize outline-none w-full p-4 text-lg animate__animated animate__zoomIn"
+                className="capitalize outline-none w-full p-4 text-lg animate__animated animate__zoomIn bg-slate-100"
                 name="destination"
                 id="destination"
                 value={planningTrip.destination}
@@ -144,7 +144,7 @@ const PlanTrip = () => {
                   onChange={(e) => handleChange(e)}
                   required
                   name="startDate"
-                  className="outline-none w-full p-4 text-lg animate__animated animate__zoomIn"
+                  className="outline-none w-full p-4 text-lg animate__animated animate__zoomIn bg-slate-100"
                   type="date"
                   value={planningTrip.startDate}
                 />
@@ -160,7 +160,7 @@ const PlanTrip = () => {
                   required
                   onChange={(e) => handleChange(e)}
                   name="endDate"
-                  className="outline-none w-full p-4 text-lg animate__animated animate__zoomIn"
+                  className="outline-none w-full p-4 text-lg animate__animated animate__zoomIn bg-slate-100"
                   type="date"
                   value={planningTrip.endDate}
                 />
@@ -186,6 +186,7 @@ const PlanTrip = () => {
                     checked={planningTrip.activities.includes("campfire")}
                     onChange={handleCheckboxChange}
                     id="campfire"
+                    className="bg-slate-100"
                   />
                   <label> campfire</label>
                   <br />
@@ -195,6 +196,7 @@ const PlanTrip = () => {
                     checked={planningTrip.activities.includes("djnight")}
                     onChange={handleCheckboxChange}
                     id="djnight"
+                    className="bg-slate-100"
                   />
                   <label> djnight</label>
                   <br />
@@ -204,6 +206,7 @@ const PlanTrip = () => {
                     checked={planningTrip.activities.includes("jeepsafari")}
                     onChange={handleCheckboxChange}
                     id="jeepsafari"
+                    className="bg-slate-100"
                   />
                   <label> jeepsafari</label>
                   <br />
@@ -213,6 +216,7 @@ const PlanTrip = () => {
                     checked={planningTrip.activities.includes("trekking")}
                     onChange={handleCheckboxChange}
                     id="trekking"
+                    className="bg-slate-100"
                   />
                   <label> trekking</label>
                   <br />
@@ -224,6 +228,7 @@ const PlanTrip = () => {
                     checked={planningTrip.activities.includes("viewpoint")}
                     onChange={handleCheckboxChange}
                     id="viewpoint"
+                    className="bg-slate-100"
                   />
                   <label> viewpoint</label>
                   <br />
@@ -233,6 +238,7 @@ const PlanTrip = () => {
                     checked={planningTrip.activities.includes("touristvisit")}
                     onChange={handleCheckboxChange}
                     id="touristvisit"
+                    className="bg-slate-100"
                   />
                   <label> touristvisit</label>
                   <br />
@@ -242,6 +248,7 @@ const PlanTrip = () => {
                     checked={planningTrip.activities.includes("shopping")}
                     onChange={handleCheckboxChange}
                     id="shopping"
+                    className="bg-slate-100"
                   />
                   <label> shopping</label>
                   <br />
@@ -251,6 +258,7 @@ const PlanTrip = () => {
                     checked={planningTrip.activities.includes("bunjijumping")}
                     onChange={handleCheckboxChange}
                     id="bunjijumping"
+                    className="bg-slate-100"
                   />
                   <label> bunjijumping</label>
                 </div>
@@ -260,7 +268,7 @@ const PlanTrip = () => {
           <div>
             <button
               onClick={planTrip}
-              className="animate__animated animate__zoomIn py-2 px-4 bg-sky-600 flex items-center justify-center capitalize text-xl rounded-md font-medium text-slate-900 hover:shadow-[0_5px_15px_rgba(0,0,0,0.35)]"
+              className="animate__animated animate__zoomIn py-2 px-4 bg-sky-600 flex items-center justify-center capitalize text-xl rounded-md font-medium text-white hover:shadow-[0_5px_15px_rgba(0,0,0,0.35)]"
             >
               plan it
             </button>
