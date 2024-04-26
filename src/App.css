@@ -8,7 +8,7 @@
 
 
 /* Tablet responsive */
-@media (min-width: 425px) and (max-width: 768px) {
+@media (min-width: 375px) and (max-width: 768px) {
   /*first text in the image */
   #headone {
     position: relative;
@@ -70,6 +70,10 @@
 /* Mobile responsive */
 @media (min-width: 375px) and (max-width: 425px) {
   /*first text in the image */
+  body{
+    background-color: white;
+    color: black;
+  }
   #headone {
     position: relative;
     bottom: 13rem;
@@ -108,13 +112,13 @@
   }
   /* signup form  */
   #signup {
-    width: 13rem;
+    width: 11.8rem;
     font-size: 1rem;
     height: 26rem;
   }
   /* signin form  */
   #signin {
-    width: 13rem;
+    width: 11.8rem;
     font-size: 1rem;
     height: 26rem;
   }
@@ -139,6 +143,7 @@
     display: flex;
     align-items:center;
     justify-content: space-between;
+    width: 100vw;
   }
   /* navbar */
   #navbar-content {
@@ -151,7 +156,7 @@
   }
   /* navbar font */
   #navbar-content li{
-    font-size: small;
+    font-size: .7rem;
     margin: -1rem;
     display: flex;
     justify-content: center;
@@ -163,6 +168,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  #auth{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width: 12rem; */
   }
 }
 

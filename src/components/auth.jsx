@@ -129,7 +129,7 @@ const Auth = () => {
   };
 
   return (
-    <main className="flex items-center justify-center m-8 bg-white">
+    <main id="auth" className="flex items-center justify-center m-8 bg-white">
       <div className="flex items-center justify-evenly flex-row bg-white rounded-3xl shadow-[0_5px_15px_rgba(0,0,0,0.35)]">
         {/* Start of signup form */}
         <div
