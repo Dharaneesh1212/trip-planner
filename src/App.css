@@ -1,3 +1,8 @@
+#root {
+  background-color: white;
+  color: black;
+}
+
 /* Desktop responsive */
 @media (min-width: 769px) and (max-width: 1024) {
   /* navbar content */
