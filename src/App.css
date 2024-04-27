@@ -4,11 +4,19 @@
   #navbar-content {
     display: flex;
   }
+  body {
+    background-color: white;
+    color: black;
+  }
 }
 
 /* Tablet responsive */
-@media (min-width: 375px) and (max-width: 768px) {
+@media (min-width: 426px) and (max-width: 768px) {
   /*first text in the image */
+  body {
+    background-color: white;
+    color: black;
+  }
   #headone {
     position: relative;
     bottom: 20rem;
